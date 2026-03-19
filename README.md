@@ -120,4 +120,4 @@ The CShapes Dataset. International Interactions, 36(1), 86–106.
 
 ## License
 
-[MIT](LICENSE) — UA Data Visualization Challenge 2026
+[MIT](LICENSE)
