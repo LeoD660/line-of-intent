@@ -5,11 +5,7 @@
 
 An interactive data visualization tracing how war, empire, and diplomacy redrew the political maps of **Central Europe**, the **Middle East**, and **Post-colonial Africa** across 18 key moments from 1914 to 2003.
 
----
-
-## Preview
-
-![Static overview — Central Europe 1914–2000](outputs/animation.png)
+**Live demo:** [border-changes-interactive-map.html](https://LeoD660.github.io/line-of-intent/output/border-changes-interactive-map.html) &nbsp;|&nbsp; [Full write-up](https://LeoD660.github.io/line-of-intent/lines-of-intent.html)
 
 ---
 
@@ -29,7 +25,14 @@ Each region is shown across six key historical moments — treaties, wars, indep
 
 ## Interactive Demo
 
-Open `lines-of-intent.html` in any modern browser — no server or internet connection required.
+Two ways to explore:
+
+| File | What it is |
+|------|-----------|
+| `lines-of-intent.html` | Full write-up with embedded animation — start here |
+| `outputs/border-changes-interactive-map.html` | Standalone interactive map — share this link with judges |
+
+Open either file in any modern browser — no server or internet connection required.
 
 - Switch between the three regions using the region buttons
 - Press **play** to animate countries appearing one by one
@@ -45,9 +48,8 @@ lines-of-intent/
 ├── lines-of-intent.qmd   # Source document (Quarto)
 ├── lines-of-intent.html  # Rendered output — open this in a browser
 ├── outputs/
-│   ├── animation.png     # Static overview grid (Central Europe, 300 DPI)
-│   ├── animation.html    # Standalone interactive animation
-│   └── data_*.js         # GeoJSON boundary data per region
+│   ├── border-changes-interactive-map.html  # Standalone interactive animation
+│   └── data_*.js                            # GeoJSON boundary data per region (generated on render)
 └── README.md
 ```
 
@@ -59,9 +61,9 @@ lines-of-intent/
 
 ```r
 install.packages(c(
-  "cshapes", "roughsf", "sf", "ggplot2", "patchwork",
+  "cshapes", "roughsf", "sf", "ggplot2",
   "MetBrewer", "htmltools", "webshot2", "gifski",
-  "dplyr", "jsonlite", "geojsonsf", "ggplotify",
+  "dplyr", "jsonlite", "geojsonsf",
   "htmlwidgets", "png"
 ))
 ```
@@ -101,7 +103,7 @@ quarto render lines-of-intent.qmd
 | `cshapes` | Historical boundary data |
 | `roughsf` | Hand-drawn map rendering |
 | `sf` | Spatial data handling |
-| `ggplot2` + `patchwork` | Static grid output |
+| `ggplot2` | ggplot2 fallback rendering |
 | `MetBrewer` | Colour palette (Redon) |
 | `webshot2` | Widget → PNG capture |
 | `jsonlite` + `geojsonsf` | GeoJSON export |
