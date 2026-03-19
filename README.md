@@ -5,7 +5,7 @@
 
 An interactive data visualization tracing how war, empire, and diplomacy redrew the political maps of **Central Europe**, the **Middle East**, and **Post-colonial Africa** across 18 key moments from 1914 to 2003.
 
-**Live demo:** [border-changes-interactive-map.html](https://LeoD660.github.io/line-of-intent/output/border-changes-interactive-map.html) &nbsp;|&nbsp; [Full write-up](https://LeoD660.github.io/line-of-intent/lines-of-intent.html)
+**Live demo:** [lines-of-intent-interactive.html](https://LeoD660.github.io/line-of-intent/output/lines-of-intent-interactive.html) &nbsp;|&nbsp; [Full write-up](https://LeoD660.github.io/line-of-intent/lines-of-intent.html)
 
 ---
 
@@ -30,14 +30,15 @@ Two ways to explore:
 | File | What it is |
 |------|-----------|
 | `lines-of-intent.html` | Full write-up with embedded animation — start here |
-| `outputs/border-changes-interactive-map.html` | Standalone interactive map — share this link with judges |
+| `outputs/lines-of-intent-interactive.html` | Standalone interactive map — share this link with judges |
 
 Open either file in any modern browser — no server or internet connection required.
 
-- Switch between the three regions using the region buttons
-- Press **play** to animate countries appearing one by one
+- Animation starts automatically on load
+- Switch between regions — Central Europe, Middle East, Post-colonial Africa — animation restarts automatically
 - Hover over any country to see its name
-- Use **skip →** to jump ahead or drag the speed slider
+- Use **next →** to jump to the next panel, **↺ replay** to redraw the current panel
+- Drag the speed slider to control pace
 
 ---
 
@@ -48,8 +49,7 @@ lines-of-intent/
 ├── lines-of-intent.qmd   # Source document (Quarto)
 ├── lines-of-intent.html  # Rendered output — open this in a browser
 ├── outputs/
-│   ├── border-changes-interactive-map.html  # Standalone interactive animation
-│   └── data_*.js                            # GeoJSON boundary data per region (generated on render)
+│   └── lines-of-intent-interactive.html  # Standalone interactive animation
 └── README.md
 ```
 
