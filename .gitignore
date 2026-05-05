@@ -1,0 +1,3 @@
+# Intermediate build artifacts — regenerated on each render
+output/data_*.js
+output/frames/
