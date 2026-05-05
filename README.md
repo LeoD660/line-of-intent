@@ -5,7 +5,7 @@
 
 An interactive data visualization tracing how war, empire, and diplomacy redrew the political maps of **Central Europe**, the **Middle East**, and **Post-colonial Africa** across 18 key moments from 1914 to 2003.
 
-**Live demo:** [lines-of-intent-interactive.html](https://LeoD660.github.io/line-of-intent/output/lines-of-intent-interactive.html) &nbsp;|&nbsp; [Full write-up](https://LeoD660.github.io/line-of-intent/lines-of-intent.html)
+**Live demo:** [lines-of-intent-interactive.html](https://LeoD660.github.io/line-of-intent/output/lines-of-intent-interactive.html) &nbsp;|&nbsp; [Full write-up](https://LeoD660.github.io/line-of-intent/code/lines-of-intent.html)
 
 ---
 
@@ -29,8 +29,8 @@ Two ways to explore:
 
 | File | What it is |
 |------|-----------|
-| `lines-of-intent.html` | Full write-up with embedded animation — start here |
-| `outputs/lines-of-intent-interactive.html` | Standalone interactive map — share this link with judges |
+| `code/lines-of-intent.html` | Full write-up with embedded animation — start here |
+| `output/lines-of-intent-interactive.html` | Standalone interactive map |
 
 Open either file in any modern browser — no server or internet connection required.
 
@@ -45,10 +45,11 @@ Open either file in any modern browser — no server or internet connection requ
 ## Repository Structure
 
 ```
-lines-of-intent/
-├── lines-of-intent.qmd   # Source document (Quarto)
-├── lines-of-intent.html  # Rendered output — open this in a browser
-├── outputs/
+line-of-intent/
+├── code/
+│   ├── lines-of-intent.qmd   # Source document (Quarto)
+│   └── lines-of-intent.html  # Rendered output — open this in a browser
+├── output/
 │   └── lines-of-intent-interactive.html  # Standalone interactive animation
 └── README.md
 ```
@@ -62,7 +63,7 @@ lines-of-intent/
 ```r
 install.packages(c(
   "cshapes", "roughsf", "sf", "ggplot2",
-  "MetBrewer", "htmltools", "webshot2", "gifski",
+  "MetBrewer", "htmltools", "webshot2",
   "dplyr", "jsonlite", "geojsonsf",
   "htmlwidgets", "png"
 ))
@@ -73,13 +74,13 @@ install.packages(c(
 ### Render
 
 ```r
-quarto::quarto_render("lines-of-intent.qmd")
+quarto::quarto_render("code/lines-of-intent.qmd")
 ```
 
 Or from the terminal:
 
 ```bash
-quarto render lines-of-intent.qmd
+quarto render code/lines-of-intent.qmd
 ```
 
 ---
@@ -100,14 +101,17 @@ quarto render lines-of-intent.qmd
 
 | Package | Role |
 |---------|------|
-| `cshapes` | Historical boundary data |
+| `cshapes` | Historical boundary data (1886–present) |
 | `roughsf` | Hand-drawn map rendering |
 | `sf` | Spatial data handling |
-| `ggplot2` | ggplot2 fallback rendering |
+| `ggplot2` | Fallback map rendering |
 | `MetBrewer` | Colour palette (Redon) |
+| `htmltools` | Embeds interactive map into the document |
 | `webshot2` | Widget → PNG capture |
+| `dplyr` | Data wrangling |
 | `jsonlite` + `geojsonsf` | GeoJSON export |
-| `htmlwidgets` | HTML widget serialisation |
+| `htmlwidgets` | Saves widget as standalone HTML |
+| `png` | Reads PNG screenshots for map layout |
 
 ---
 
