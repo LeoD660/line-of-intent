@@ -51,7 +51,8 @@ line-of-intent/
 │   └── lines-of-intent.html  # Rendered output — open this in a browser
 ├── output/
 │   └── lines-of-intent-interactive.html  # Standalone interactive animation
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ---
